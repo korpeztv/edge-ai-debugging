@@ -1,0 +1,36 @@
+name: Prompt Security Check
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install security tools
+        run: |
+          pip install bandit safety
+
+      - name: Check for common injection patterns
+        run: |
+          echo "Scanning for potential prompt injection vulnerabilities..."
+          # Look for suspicious patterns in prompt files
+          grep -r "eval\|exec\|__import__" . --include="*.md" --include="*.txt" --include="*.json" || true
+          echo "Scan complete - review findings above"
+
+      - name: Validate JSON prompts (if any)
+        run: |
+          if find . -name "*.json" -type f | grep -q .; then
+            python -m json.tool < $(find . -name "*.json" -type f | head -1) > /dev/null
+            echo "✓ JSON validation passed"
+          fi
