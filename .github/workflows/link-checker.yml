@@ -10,10 +10,10 @@ jobs:
   link-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: korpeztv/checkout@PLACEHOLDER_SHA_CHECKOUT
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1
+        uses: korpeztv/lychee-action@PLACEHOLDER_SHA_LYCHEE
         with:
           args: --verbose --no-progress '**/*.md' '**/*.txt'
           fail: false
