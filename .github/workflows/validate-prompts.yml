@@ -10,10 +10,10 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: korpeztv/checkout@PLACEHOLDER_SHA_CHECKOUT
 
       - name: Validate YAML
-        uses: ibiqlik/action-yamllint@v3
+        uses: korpeztv/yamllint-action@PLACEHOLDER_SHA_YAMLLINT
         with:
           config_data: |
             extends: default
@@ -24,12 +24,12 @@ jobs:
                 min-spaces-from-content: 1
 
       - name: Markdown Lint
-        uses: nosborn/github-action-markdown-cli@v3.3.0
+        uses: korpeztv/markdown-lint-action@PLACEHOLDER_SHA_MARKDOWN_LINT
         with:
           files: .
           config_file: .markdownlintrc
 
       - name: Spell Check
-        uses: cspell/cspell-action@v1
+        uses: korpeztv/cspell-action@PLACEHOLDER_SHA_CSPELL
         with:
           inline: warning
