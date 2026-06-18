@@ -1,0 +1,16 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor configurations
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+
+# Dependency folders (if you add them later)
+node_modules/
+__pycache__/
+venv/
