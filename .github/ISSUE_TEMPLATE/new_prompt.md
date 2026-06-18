@@ -11,9 +11,12 @@ What specific edge case, failure mode, or cognitive limitation is this prompt de
 
 ## Proposed Prompt File Name
 Following the established repository pattern (e.g., tracking alongside existing files llm-debugger-1.md through llm-debugger-10.md), what is the proposed tracking identifier?
-**Identifier:** ## Raw Prompt Payload
-Paste the exact text of the prompt below inside the blockquote:
-[Insert your exact prompt text here]
+**Identifier:**
+
+## Raw Prompt Payload
+Paste the exact text of the prompt below inside a blockquote or fenced code block:
+
+> [Insert your exact prompt text here]
 
 ## Evaluation Benchmarks & Ground Truth
 

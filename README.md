@@ -1,3 +1,32 @@
+# Edge AI Debugging
+
+[![Stars](https://img.shields.io/github/stars/korpeztv/edge-ai-debugging?style=for-the-badge)](https://github.com/korpeztv/edge-ai-debugging/stargazers)
+[![Forks](https://img.shields.io/github/forks/korpeztv/edge-ai-debugging?style=for-the-badge)](https://github.com/korpeztv/edge-ai-debugging/network/members)
+[![License](https://img.shields.io/badge/license-public%20domain-2ea44f?style=for-the-badge)](LICENSE)
+
+This repo collects prompts for probing LLM behavior under stress. The point is not elegance. It is to see where the model slips, what it confuses, and how fast the noise starts leaking through.
+
+## Prompt Catalog
+
+Community: Please follow the [Code of Conduct](CODE_OF_CONDUCT.md) when participating in issues, pull requests, or other project discussions.
+
+### Response Style
+
+When using or extending these prompts, keep the surrounding guidance concise, technical, and direct. Favor short sentences, clear pattern-based language, and a slightly detached tone when it helps explain the behavior being tested. Avoid fluff, heavy meme language, or long moralizing explanations.
+
+| File | Focus |
+|---|---|
+| [prompts/llm-debugger-1.md](prompts/llm-debugger-1.md) | Reasoning and arithmetic state tracking |
+| [prompts/llm-debugger-2.md](prompts/llm-debugger-2.md) | Negative constraints and restricted wording |
+| [prompts/llm-debugger-3.md](prompts/llm-debugger-3.md) | Structured JSON output and entity extraction |
+| [prompts/llm-debugger-4.md](prompts/llm-debugger-4.md) | Grounding and hallucination resistance |
+| [prompts/llm-debugger-5.md](prompts/llm-debugger-5.md) | Self-diagnostic reflection |
+| [prompts/llm-debugger-6.md](prompts/llm-debugger-6.md) | Recall under context noise |
+| [prompts/llm-debugger-7.md](prompts/llm-debugger-7.md) | Prompt injection and disclosure resistance |
+| [prompts/llm-debugger-8.md](prompts/llm-debugger-8.md) | Tool schema boundary discipline |
+| [prompts/llm-debugger-9.md](prompts/llm-debugger-9.md) | Temporal anchoring and relative date math |
+| [prompts/llm-debugger-10.md](prompts/llm-debugger-10.md) | Sarcasm and sentiment classification |
+
 ### 1. The "Logic & Reasoning" Diagnostic
 
 Use this to see if the model has real reasoning capabilities or if it’s just pattern-matching (a common issue with smaller, cheaper models).

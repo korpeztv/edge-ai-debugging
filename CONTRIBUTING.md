@@ -16,6 +16,7 @@ We welcome contributions to help improve our diagnostic prompt library! Whether 
 - **Isolation:** Ensure your prompt does not rely on hidden context.
 - **Determinism:** If possible, write prompts that yield clear pass/fail results.
 - **Security:** Adhere to the `SECURITY.md` guidelines—never include PII or sensitive production secrets in your test data.
+- **Style:** Keep any explanatory copy concise, technical, and direct. Use short sentences and pattern-focused language when describing model behavior.
 
 ## Code of Conduct
-By participating, you agree to uphold our community standards of professional and respectful interaction.
+By participating, you agree to follow the repository's [Code of Conduct](CODE_OF_CONDUCT.md) and to uphold professional, respectful interaction in all project spaces.
