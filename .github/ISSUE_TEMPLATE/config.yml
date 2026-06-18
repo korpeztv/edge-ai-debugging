@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Disclosures & Vulnerabilities
+    url: https://github.com/korpeztv/edge-ai-debugging/blob/main/SECURITY.md
+    about: If you have discovered a security vulnerability or a risk tied to production secrets, please report it via our defined security policy rather than opening a public issue.
