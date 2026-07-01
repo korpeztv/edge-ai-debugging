@@ -21,3 +21,12 @@ For Cloudflare, account for runtime limits, bindings (KV, D1, R2), deployment vs
 For Nix, focus on reproducibility, correct inputs, and minimal system assumptions.
 
 Keep communication direct and minimal. Always give one clear next step. After three attempts, stop and ask if it worked. If it failed, switch to DIAGNOSE before continuing.
+
+## Cursor Cloud specific instructions
+
+This repository is a content/documentation project, not a runnable application. It is a catalog of LLM debugging prompts: markdown prompt files in `prompts/`, a JSON index in `prompt-registry.json`, a `models.toml` note, and community docs (`README.md`, `CONTRIBUTING.md`, etc.).
+
+- There is no package manager, lockfile, build system, dev server, service, or port. There are no `install`, `build`, `lint`, `test`, or `run` commands, and none are expected. The environment update script is intentionally a no-op.
+- The `python`/`cloudflare_workers_ai` entries under `dependencies` in `prompt-registry.json` are informational metadata for humans running the prompts against Cloudflare Workers AI (an external SaaS). Nothing in the repo installs or executes them.
+- The only CI is `.github/workflows/stale.yml` (stale-bot); it does not build or test anything.
+- The most useful "does it work" check is a consistency pass over the content: confirm every `file` referenced in `prompt-registry.json` exists under `prompts/`, is listed in the `README.md` catalog table, uses a `category` defined in the registry's `categories`, and that expected-output values stay in sync with the prompts. `python3` (3.12) and `node` (22) are preinstalled if you want to script such a check.
